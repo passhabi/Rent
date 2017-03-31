@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Rent</string>
+    <string name="building_name">Building name:</string>
+    <string name="e_g_yellow_one">e.g. Yellow one</string>
+    <string name="plate_number">Plate number:</string>
+    <string name="e_g_425">e.g. 425</string>
+    <string name="address">Address:</string>
+    <string name="city">City:</string>
+    <string name="london">London</string>
+    <string name="enter_full_address_of_building">Enter full address of building..</string>
+    <string name="set_an_image">Set an image:</string>
+    <string name="browse">Browse</string>
+    <string name="submit">Submit</string>
+    <string name="set_an_image_of_your_house">Set an image of your house</string>
+    <string name="this_building_has_a_parking">This building has a parking</string>
+    <string name="add_building">Add building</string>
+    <string name="items">Items</string>
+</resources>
