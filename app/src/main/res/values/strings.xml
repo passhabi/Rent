@@ -15,4 +15,6 @@
     <string name="this_building_has_a_parking">This building has a parking</string>
     <string name="add_building">Add building</string>
     <string name="items">Items</string>
+    <string name="DataAddedSuccessfully">Data Added Successfully</string>
+    <string name="anErrorOccurred">an error occurred, Data didn"'"t accept</string>
 </resources>

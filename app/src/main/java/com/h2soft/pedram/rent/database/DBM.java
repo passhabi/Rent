@@ -1,4 +1,4 @@
-package com.h2soft.pedram.rent;
+package com.h2soft.pedram.rent.database;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
