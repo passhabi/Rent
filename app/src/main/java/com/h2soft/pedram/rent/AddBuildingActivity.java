@@ -1,10 +1,8 @@
 package com.h2soft.pedram.rent;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -21,41 +19,26 @@ public class AddBuildingActivity extends AppCompatActivity {
     EditText addressEditText;
     CheckBox parkingCheckBox;
 
-    int toastMessage;
+    String toastText;
 
 
     public void onClickSubmitButton(View view) {
 
-        long errorCheck =
+        long check =
                 buildingManagement.insertInto(
                         nameEditText.getText().toString(),
                         Integer.parseInt(plateNumberEditText.getText().toString()),
                         addressEditText.getText().toString(),
                         cityEditText.getText().toString(),
                         parkingCheckBox.isChecked());
-        if (errorCheck == -1)
-            toastMessage = R.string.anErrorOccurred;
+        if (check == -1)
+            toastText = getString(R.string.anErrorOccurred);
         else {
-            toastMessage = R.string.DataAddedSuccessfully;
+            toastText = getString(R.string.DataAddedSuccessfully) +
+                    getString(R.string.colonID) + " " + check + " " + getString(R.string.added);
             startActivity(new Intent(this, MainActivity.class));
         }
-        Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show();
-
-
-        /*
-        Cursor c = buildingManagement.selectAllRows();
-        int nameIndex = c.getColumnIndex("name");
-        int plateIndex = c.getColumnIndex("plate_number");
-        int cityIndex = c.getColumnIndex("city");
-        int parkingIndex = c.getColumnIndex("parking");
-
-        c.moveToFirst();
-        while (c.moveToNext()){
-            Log.i("NAME: ",c.getString(nameIndex));
-            Log.i("PLATE NUMBER: ",c.getString(plateIndex));
-            Log.i("CITY: ",c.getString(cityIndex));
-            Log.i("PARKING ",c.getString(parkingIndex));
-        }*/
+        Toast.makeText(this, toastText, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -64,7 +47,6 @@ public class AddBuildingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_building);
         // Initialization
         buildingManagement = new Building(AddBuildingActivity.this);
-
         nameEditText = (EditText) findViewById(R.id.buildingNameEditText);
         plateNumberEditText = (EditText) findViewById(R.id.plateNumberEditText);
         cityEditText = (EditText) findViewById(R.id.cityEditText);

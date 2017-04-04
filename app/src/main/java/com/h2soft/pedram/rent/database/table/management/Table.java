@@ -10,29 +10,41 @@ import com.h2soft.pedram.rent.database.attributes;
 
 /**
  * Created by Pedram on 4/1/2017.
+ * represent the least critical and common functions of classes that deal with tables in the database.
+ * to define a new table in database, extend Table.
  */
 
 public abstract class Table extends SQLiteOpenHelper {
 
-    protected String query;
-    protected ContentValues values;
-    protected String tableName;
+    String query;
+    ContentValues values;
+    String tableName;
 
     /**
-     *
-     * @param context
-     * @param table name of the table you want specify.
+     * @param context to use to open or create the database
+     * @param table   name of the table you want specify.
      */
-    public Table(Context context, String table) {
+    Table(Context context, String table) {
         super(context, attributes.getName(), null, attributes.getVersion());
         tableName = table;
         values = new ContentValues();
     }
 
-    public Cursor selectAllRows()
-    {
-        query = "SELECT * FROM "+ tableName;
+    public Cursor selectAllRows() {
+        query = "SELECT * FROM " + tableName;
         return getReadableDatabase().rawQuery(query, null);
     }
 
+    // add later
+    abstract public void clear();
+
+    /**
+     * For working this method, field id PRIMARY KEY must defined as _id.
+     * @param id ,the row id you want to delete form the table.
+     */
+    public void deleteRow(int id) {
+        query = "DELETE FROM " + tableName +
+                "WHERE _id =" + id;
+
+    }
 }

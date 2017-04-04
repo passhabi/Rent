@@ -53,5 +53,9 @@ public class Building extends Table {
         return getWritableDatabase().insert(tableName, null, values);
     }
 
+    @Override
+    public void clear() {
+
+    }
 
 }

@@ -34,43 +34,12 @@
             android:inputType="text"
             android:maxLines="1" />
 
-        <TextView
-            android:id="@+id/plateNumberTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/buildingNameEditText"
-            android:layout_marginTop="18dp"
-            android:text="@string/plate_number" />
-
-        <EditText
-            android:id="@+id/plateNumberEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/plateNumberTextView"
-            android:layout_alignTop="@id/buildingNameTextView"
-            android:layout_marginStart="32dp"
-            android:layout_toEndOf="@+id/plateNumberTextView"
-            android:hint="@string/e_g_425"
-            android:inputType="number"
-            android:maxLines="1" />
-
-
-        <TextView
-            android:id="@+id/imageTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/plateNumberTextView"
-            android:layout_marginTop="10dp"
-            android:text="@string/set_an_image" />
-
         <Button
             android:id="@+id/setImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/imageTextView"
+            android:layout_below="@+id/buildingNameTextView"
             android:layout_marginTop="80dp"
             android:text="@string/browse" />
 
@@ -78,7 +47,7 @@
             android:id="@+id/houseImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/imageTextView"
+            android:layout_alignBaseline="@+id/buildingNameTextView"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="30dp"
             android:adjustViewBounds="true"
@@ -136,17 +105,36 @@
             android:lines="3"
             android:maxLines="3" />
 
-        <Button
-            android:id="@+id/submitButton"
+        <TextView
+            android:id="@+id/plateNumberTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
             android:layout_below="@+id/addressEditText"
+            android:layout_marginTop="18dp"
+            android:text="@string/plate_number" />
+
+        <EditText
+            android:id="@+id/plateNumberEditText"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/e_g_425"
+            android:inputType="number"
+            android:maxLines="1"
+            android:layout_alignBottom="@+id/plateNumberTextView"
+            android:layout_toEndOf="@+id/plateNumberTextView"
+            android:layout_marginStart="10dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/submitButton"
+            android:layout_below="@+id/plateNumberEditText"
             android:layout_centerHorizontal="true"
             android:onClick="onClickSubmitButton"
-            android:paddingEnd="50dp"
             android:paddingStart="50dp"
-            android:text="@string/submit" />
-
-
+            android:paddingEnd="50dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/submit"/>
     </RelativeLayout>
 </ScrollView>

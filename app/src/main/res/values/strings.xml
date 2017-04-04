@@ -2,7 +2,7 @@
     <string name="app_name">Rent</string>
     <string name="building_name">Building name:</string>
     <string name="e_g_yellow_one">e.g. Yellow one</string>
-    <string name="plate_number">Plate number:</string>
+    <string name="plate_number">Plate\nNumber:</string>
     <string name="e_g_425">e.g. 425</string>
     <string name="address">Address:</string>
     <string name="city">City:</string>
@@ -16,5 +16,7 @@
     <string name="add_building">Add building</string>
     <string name="items">Items</string>
     <string name="DataAddedSuccessfully">Data Added Successfully</string>
-    <string name="anErrorOccurred">an error occurred, Data didn"'"t accept</string>
+    <string name="anErrorOccurred">an error occurred</string>
+    <string name="colonID">, ID</string>
+    <string name="added">added</string>
 </resources>
